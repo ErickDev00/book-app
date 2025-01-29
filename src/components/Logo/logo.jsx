@@ -1,16 +1,25 @@
 import React from "react";
 import logo from "../../imagens/logo.svg";
-import "./logo.css";
+import styled from "styled-components";
+
+const Logoco = styled.div`
+  display: flex;
+  font-size: 30px;
+`;
+
+const LogoImg = styled.img`
+  padding-right: 10px;
+`;
 
 const Logo = () => {
   return (
     <div>
-      <div className="logo">
-        <img className="logoimg" src={logo} alt="logo" />
+      <Logoco>
+        <LogoImg src={logo} alt="logo" />
         <p>
           <strong>Alura</strong>Books
         </p>
-      </div>
+      </Logoco>
     </div>
   );
 };

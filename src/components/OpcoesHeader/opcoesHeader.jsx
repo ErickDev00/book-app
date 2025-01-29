@@ -1,18 +1,35 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import "./opcoesHeader.css";
+import styled from "styled-components";
+
+const Opcoes = styled.ul`
+  display: flex;
+`;
+
+const Opcao = styled.li`
+  list-style: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 5px;
+  cursor: pointer;
+  min-width: 120px;
+`;
 
 const textoOpcoes = ["CATEGORIAS", "FAVORITOS", "MINHA ESTANTE"];
 
 const OpcoesHeader = () => {
   return (
-    <ul className="opcoes">
+    <Opcoes>
       {textoOpcoes.map((texto) => (
-        <li className="opcao">
+        <Opcao>
           <p>{texto}</p>
-        </li>
+        </Opcao>
       ))}
-    </ul>
+    </Opcoes>
   );
 };
 
