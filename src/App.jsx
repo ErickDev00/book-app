@@ -1,6 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 
 import Header from "./components/Header/header";
+import Pesquisa from "./components/Pesquisa/pesquisa";
 import styled from "styled-components";
 
 const AppContainer = styled.div`
@@ -14,6 +15,7 @@ function App() {
     <>
       <AppContainer>
         <Header />
+        <Pesquisa />
       </AppContainer>
     </>
   );
