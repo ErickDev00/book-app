@@ -1,0 +1,20 @@
+
+.opcoes{
+  display: flex;
+}
+
+li{
+  list-style: none;
+}
+
+.opcao{
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 5px;
+  cursor: pointer;
+  min-width: 120px;
+}
