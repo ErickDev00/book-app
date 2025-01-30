@@ -17,7 +17,7 @@ const Logo = () => {
       <Logoco>
         <LogoImg src={logo} alt="logo" />
         <p>
-          <strong>Alura</strong>Books
+          <strong>Erick</strong>Books
         </p>
       </Logoco>
     </div>

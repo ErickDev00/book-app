@@ -1,5 +1,9 @@
+/* eslint-disable react/jsx-key */
 import React from "react";
 import { livros } from "./dadosUltimosLancamentos";
+import { Titulo } from "../Titulo/titulo";
+import CardRecomenda from "../CardRecomenda/cardRecomenda";
+import imagemLivro from "../../../public/imagens/livro2.png";
 import styled from "styled-components";
 
 const UltimosLContainer = styled.section`
@@ -7,16 +11,6 @@ const UltimosLContainer = styled.section`
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
-`;
-
-const Titulo = styled.h2`
-  width: 100%;
-  padding: 30px 0;
-  background-color: #fff;
-  color: #eb9b00;
-  font-size: 36px;
-  text-align: center;
-  margin: 0;
 `;
 
 const NovosLivrosContainer = styled.div`
@@ -27,21 +21,23 @@ const NovosLivrosContainer = styled.div`
   cursor: pointer;
 `;
 
-const LivrosDescritos = styled.p`
-  margin: 10px;
-`;
-
 const UltimosLancamentos = () => {
   return (
     <UltimosLContainer>
-      <Titulo>Ultimos Lançamentos</Titulo>
+      <Titulo cor="#000" tamanhoFonte="36px">
+        Ultimos Lançamentos
+      </Titulo>
       <NovosLivrosContainer>
-        {livros.map((livro, index) => (
-          <LivrosDescritos key={livro.id || index}>
-            {livro.nome}
-          </LivrosDescritos>
+        {livros.map((livro) => (
+          <img src={livro.src} />
         ))}
       </NovosLivrosContainer>
+      <CardRecomenda
+        titulo="Talvez você se interesse por:"
+        subtitulo="Angular 11"
+        descricao="Construindo uma aplicação com a plataforma."
+        img={imagemLivro}
+      />
     </UltimosLContainer>
   );
 };

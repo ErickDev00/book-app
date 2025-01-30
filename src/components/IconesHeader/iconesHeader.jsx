@@ -7,11 +7,13 @@ import sacola from "../../icones/sacola.svg";
 const Icones = styled.ul`
   display: flex;
   align-items: center;
+  cursor: pointer;
 `;
 
 const Icone = styled.li`
   margin-right: 40px;
   width: 25px;
+  cursor: pointer;
 `;
 
 const icones = [sacola, perfil];

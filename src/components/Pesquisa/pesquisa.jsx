@@ -45,28 +45,29 @@ const Resultado = styled.div`
 
 const Pesquisa = () => {
   const [livrosPesquisados, setLivrosPesquisados] = useState([]);
+
+  const handleBlur = (evento) => {
+    const textoDigitado = evento.target.value.trim(); // Remove espaços em branco no início e no fim
+
+    if (textoDigitado === "") {
+      setLivrosPesquisados([]); // Se o campo estiver vazio, define a lista de livros pesquisados como vazia
+    } else {
+      const resultadoPesquisa = livros.filter((livro) =>
+        livro.nome.toLowerCase().includes(textoDigitado.toLowerCase())
+      );
+      setLivrosPesquisados(resultadoPesquisa);
+    }
+  };
+
   return (
     <PesquisaContainer>
       <Titulo>Já sabe por onde começar?</Titulo>
       <Subtitulo>Encontre seu livro em nossa estante</Subtitulo>
-      <Input
-        placeholder="Escreva sua próxima leitura"
-        onBlur={(evento) => {
-          const textoDigitado = evento.target.value;
-
-          const resultadoPesquisa = livros.filter((livro) =>
-            livro.nome.toLowerCase().includes(textoDigitado.toLowerCase())
-          );
-
-          setLivrosPesquisados(resultadoPesquisa);
-        }}
-      />
+      <Input placeholder="Escreva sua próxima leitura" onBlur={handleBlur} />
       {livrosPesquisados.map((livro) => (
         <Resultado key={livro.id}>
           <p>{livro.nome}</p>
           <img src={`/imagens/${livro.src}`} width={300} />
-          {console.log(`/imagens/${livro.src}`)}
-          {console.log("Renderizando livro:", livro)}
         </Resultado>
       ))}
     </PesquisaContainer>
