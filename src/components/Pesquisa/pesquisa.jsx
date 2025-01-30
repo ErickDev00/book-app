@@ -26,6 +26,23 @@ const Subtitulo = styled.h3`
   margin-bottom: 40px;
 `;
 
+const Resultado = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  p {
+    width: 200px;
+  }
+  img {
+    width: 100px;
+  }
+  &:hover {
+    border: 1px solid white;
+  }
+`;
+
 const Pesquisa = () => {
   const [livrosPesquisados, setLivrosPesquisados] = useState([]);
   return (
@@ -33,16 +50,25 @@ const Pesquisa = () => {
       <Titulo>Já sabe por onde começar?</Titulo>
       <Subtitulo>Encontre seu livro em nossa estante</Subtitulo>
       <Input
-        type="text"
         placeholder="Escreva sua próxima leitura"
         onBlur={(evento) => {
           const textoDigitado = evento.target.value;
+
           const resultadoPesquisa = livros.filter((livro) =>
-            livro.nome.includes(textoDigitado)
+            livro.nome.toLowerCase().includes(textoDigitado.toLowerCase())
           );
+
           setLivrosPesquisados(resultadoPesquisa);
         }}
       />
+      {livrosPesquisados.map((livro) => (
+        <Resultado key={livro.id}>
+          <p>{livro.nome}</p>
+          <img src={`/imagens/${livro.src}`} width={300} />
+          {console.log(`/imagens/${livro.src}`)}
+          {console.log("Renderizando livro:", livro)}
+        </Resultado>
+      ))}
     </PesquisaContainer>
   );
 };

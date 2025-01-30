@@ -1,9 +1,8 @@
-/* eslint-disable react/jsx-key */
 import React from "react";
 import styled from "styled-components";
 
-import perfil from "../../imagens/perfil.svg";
-import sacola from "../../imagens/sacola.svg";
+import perfil from "../../icones/perfil.svg";
+import sacola from "../../icones/sacola.svg";
 
 const Icones = styled.ul`
   display: flex;
@@ -20,8 +19,8 @@ const icones = [sacola, perfil];
 const Iconesheader = () => {
   return (
     <Icones>
-      {icones.map((icone) => (
-        <Icone>
+      {icones.map((icone, index) => (
+        <Icone key={index}>
           <img src={icone} />
         </Icone>
       ))}

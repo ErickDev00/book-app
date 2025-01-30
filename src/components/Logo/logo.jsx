@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../imagens/logo.svg";
+import logo from "../../icones/logo.svg";
 import styled from "styled-components";
 
 const Logoco = styled.div`

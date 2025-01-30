@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import React from "react";
 import styled from "styled-components";
 
@@ -24,8 +23,8 @@ const textoOpcoes = ["CATEGORIAS", "FAVORITOS", "MINHA ESTANTE"];
 const OpcoesHeader = () => {
   return (
     <Opcoes>
-      {textoOpcoes.map((texto) => (
-        <Opcao>
+      {textoOpcoes.map((texto, index) => (
+        <Opcao key={index}>
           <p>{texto}</p>
         </Opcao>
       ))}
