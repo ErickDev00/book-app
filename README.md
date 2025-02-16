@@ -1,8 +1,40 @@
-# React + Vite
+# Acervo para consulta de livros desenvolvido com React utilizando Vite.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um projeto desenvolvido para demonstrar minhas habilidades em React. A aplicação inclui uma tela inical que exibe todos os livros.
 
-Currently, two official plugins are available:
+## 🛠️ Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Front-end**: React com Javascript/CSS.
+- **Banco de Dados**: Servidor JSON local.
+- **Ferramentas**: Git, VSCode.
+
+## ✨ Funcionalidades
+
+- **Para Usuários**:
+  - Consultar os livros.
+  - Buscar os livros pelo nome.
+
+## 🚀 Como Executar
+
+1. Clone o repositório:
+
+   ```bash
+   https://github.com/ErickDev00/book-app.git
+
+   ```
+
+2. Instale as Dependencias:
+
+   ```bash
+   npm install
+   ```
+
+3. Rode o Projeto:
+
+```bash
+  npm run dev
+```
+
+## 📸 Capturas de Tela
+
+![interface do usuario](image.png)
